@@ -36,7 +36,7 @@ def write_elegant(particle_group,
     P.drift_to_z()
     
     # Form data
-    keys = ['t', 'x', 'xp', 'y', 'yp', 'p']
+    keys = ['x', 'xp', 'y', 'yp', 't', 'p']
     dat = {}
     for k in keys:
         dat[k] = P[k]
@@ -54,11 +54,11 @@ def write_elegant(particle_group,
 ! species: {P['species']}
 !
 &parameter name=Charge, type=double, units=C, description="total charge in Coulombs" &end
-&column name=t,  type=double, units=s, description="time in seconds" &end
 &column name=x,  type=double, units=m, description="x in meters" &end
 &column name=xp, type=double, description="px/pz" &end
 &column name=y,  type=double, units=m, description="y in meters" &end
 &column name=yp, type=double, description="py/pz" &end
+&column name=t,  type=double, units=s, description="time in seconds" &end
 &column name=p,  type=double, description="relativistic gamma*beta" &end
 &data mode=ascii &end
 {P['charge']}
